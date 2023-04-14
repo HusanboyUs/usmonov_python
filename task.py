@@ -3,13 +3,15 @@
 
 '''Составить алгоритм: если введенное число больше 7, то вывести 'Привет' '''
 
-user_num=int(input("Hello, please enter your lucky number: "))
-
-num_checker = lambda number: "Привет" if number > 7 else None
-result = num_checker(user_num)
-
-print(result)
-
+try:
+    user_num=int(input("Hello, please enter your lucky number: "))
+    num_checker = lambda number: "Привет" if number > 7 else 'Your number is less than 7'
+    result = num_checker(user_num)
+    print(result)
+    
+except ValueError:
+    print('Please check your input!')    
+ 
 
 # задача 2
 
@@ -22,8 +24,10 @@ def checkName(name):
     if name in ['Вячеслав','вячеслав']:
         print('Привет, {}'.format(name))
     else:
-        pass
+        print('Нет такого имени')
+        #input is wrong
 myfunction=checkName(username)        
+
 
 
 # задача 3
@@ -33,13 +37,15 @@ myfunction=checkName(username)
 
 user_numbers=list(input('Please enter your sequential numbers: '))
 result=[]
+
 def num_multiples(numbers):
-    for nums in user_numbers:
-        if int(nums) %3==0:
+    for nums in numbers:
+        if int(nums) % 3==0:
             result.append(nums)
         else:
-            return None
-            #number cannot be divded 3 evenly
+            print(f'{nums} is not multiples to 3==0')    
+       
         
 myfunction=num_multiples(user_numbers)
-print(result)
+print(f'Dividable numbers are : {result}')
+        
