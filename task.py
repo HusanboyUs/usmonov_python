@@ -43,7 +43,7 @@ def num_multiples(numbers):
         if int(nums) % 3==0:
             result.append(nums)
         else:
-            print(f'{nums} is not multiples to 3==0')    
+            print(f'{nums}- canot not multiple evenly to 3')    
        
         
 myfunction=num_multiples(user_numbers)
